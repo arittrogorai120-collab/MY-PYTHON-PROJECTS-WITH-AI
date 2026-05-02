@@ -1,12 +1,30 @@
-import random
+class student:
+    def __init__(self , name):
+        self.name = name 
+        self.__marks = 0
 
-characters = "abcdefghijklmnopABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@#$"
+    def marksscored(self , marks):
+        if marks<0:
+            print("invalid marks")
 
-length = int(input("enter the password length: "))
+        else:
+            self.__marks = marks
 
-password = " "
 
-for i in range(length):
-    password = password+ random.choice(characters)
+    def getmarks(self):
+        return self.__marks 
 
-print(f"your password is ", password)
+
+a = student("albert")
+a.marksscored(399)
+
+
+
+print(f"Name: {a.name}")
+print(f"Marks: {a.getmarks()}")
+
+
+
+
+
+
