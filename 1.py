@@ -1,31 +1,21 @@
-class atm:
-    def __init__(self , pin , balance):
-        self.pin = pin
-        self.balance = balance
-        self.attempts = 0 
+import random 
 
-    def check_pin(self , entered_pin):
-        if self.attempts >= 3:
-            print("account is banned talk to the bank")
-            return False
+number = random.randint(1, 100)
 
-        if entered_pin == self.pin:
-            print("pin is correct")
-            return True
+attempts=  0
 
-        else:
-            self.attempts += 1
-            print("pin is incorrect")
-            print(f"Remaining attempts ", {3 - self.attempts})
-            return False
+while True:
+    guess = int(input("enter your no"))
+    attempts +=1
 
+    print("welcome to the guessing game . if you correctly guss you will win 100 per guess")
 
-a = atm(pin = 1234 , balance = 1000)
-a.check_pin(1222)
-a.check_pin(1221)
-a.check_pin(1232)
-a.check_pin(1232)
+    if guess > number:
+        print("printlower number please")
 
+    elif guess < number:
+        print("print higher number please")
 
-
-    
+    else:
+        print(f"you guessed the correct number in {attempts} attempts ")
+        break
